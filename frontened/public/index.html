@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML Model Prediction</title>
+</head>
+<body>
+    <h1>ML Model Integration Demo</h1>
+    <form id="prediction-form">
+        <label for="feature1">Feature 1:</label>
+        <input type="text" id="feature1" required><br><br>
+        <label for="feature2">Feature 2:</label>
+        <input type="text" id="feature2" required><br><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <h2 id="result"></h2>
+
+    <button onclick="navigateToPage('page1.html')">Go to Page 1</button>
+    <button onclick="navigateToPage('page2.html')">Go to Page 2</button>
+
+    <script>
+        function navigateToPage(page) {
+      window.location.href = page;  // This will redirect to the specified page
+    }
+        document.getElementById("prediction-form").addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            // Collect form data
+            const feature1 = document.getElementById("feature1").value;
+            const feature2 = document.getElementById("feature2").value;
+
+            // Send POST request to Node.js API
+            const response = await fetch("/api/v1/get-prediction", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ feature1, feature2 }),
+            });
+
+            const result = await response.json();
+            document.getElementById("result").innerText = "Prediction: " + result.prediction;
+        });
+    </script>
+</body>
+</html>
