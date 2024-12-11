@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ML Model Prediction</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-        * {
+        /* * {
             box-sizing: border-box;
-        }
-        body {
+        } */
+        /* body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -17,24 +18,24 @@
             align-items: center;
             height: 100vh;
             background-color: #f4f4f4;
-        }
-        .slider {
+        } */
+        /* .slider {
             width: 1200px;
             height: 350px;
             position: relative;
             overflow: hidden;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
-        .slides {
+        } */
+        /* .slides {
             display: flex;
             transition: transform 0.5s ease-in-out;
-        }
-        .slides img {
+        } */
+        /* .slides img {
             width: 600px;
             height: 400px;
-        }
-        .nav-btn {
+        } */
+        /* .nav-btn {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
@@ -43,16 +44,21 @@
             border: none;
             padding: 10px 20px;
             cursor: pointer;
-        }
-        .prev {
+        } */
+        /* .prev {
             left: 10px;
         }
         .next {
             right: 10px;
-        }
+        } */
     </style>
 </head>
 <body>
+<!-- Fixed Header -->
+<div class="header">
+    My Website Header
+</div>
+    <div class="mlmodel">
     <h1>ML Model Integration Demo</h1>
     <form id="prediction-form">
         <label for="feature1">Feature 1:</label>
@@ -61,7 +67,7 @@
         <input type="text" id="feature2" required><br><br>
         <button type="submit">Submit</button>
     </form>
-
+    </div>
     <h2 id="result"></h2>
     <div class="slider">
         <div class="slides" id="slides">
